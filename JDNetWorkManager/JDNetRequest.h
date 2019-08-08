@@ -6,7 +6,7 @@
 //  Copyright © 2019 JDragon. All rights reserved.
 //
 
-#import "JDNetwork.h"
+#import <JDragonNetWork/JDNetwork.h>
 #import "JDNetApiManager.h"
 #import "JDNetNotificationManager.h"
 

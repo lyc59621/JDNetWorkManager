@@ -7,7 +7,8 @@
 //
 
 #import "JDNetApiManager.h"
-#import "JDNetwork.h"
+//#import "JDNetwork.h"
+#import <JDragonNetWork/JDNetwork.h>
 
 
 typedef NS_ENUM(NSUInteger, ServerType) {

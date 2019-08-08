@@ -15,9 +15,9 @@
 		12A7B42B22FBC62800CDB287 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A7B42A22FBC62800CDB287 /* main.m */; };
 		12A7B43522FBC62900CDB287 /* JDNetWorkManagerDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A7B43422FBC62900CDB287 /* JDNetWorkManagerDemoTests.m */; };
 		12A7B44022FBC62900CDB287 /* JDNetWorkManagerDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A7B43F22FBC62900CDB287 /* JDNetWorkManagerDemoUITests.m */; };
-		48F0BD588A4804B8C335B4D4 /* Pods_JDNetWorkManagerDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EEA3DE2EF5FEF1115469220 /* Pods_JDNetWorkManagerDemo.framework */; };
-		55D631B288D124E358C72DCD /* Pods_JDNetWorkManagerDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5FAAF7EDAF3B231D4745551 /* Pods_JDNetWorkManagerDemoUITests.framework */; };
-		57011825B5D99C107245D5AE /* Pods_JDNetWorkManagerDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFCEE209CCFE0B62DE12E22D /* Pods_JDNetWorkManagerDemoTests.framework */; };
+		1CF8845AA328B81C56AF4088 /* libPods-JDNetWorkManagerDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A337DC8FA855FFA65502E4D2 /* libPods-JDNetWorkManagerDemo.a */; };
+		468AEF35DA81214820E9B15E /* libPods-JDNetWorkManagerDemoUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 217F3CBCE71FF7B3CC524695 /* libPods-JDNetWorkManagerDemoUITests.a */; };
+		97C5E5AE3F6D459E19FA0721 /* libPods-JDNetWorkManagerDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C31F5CA8704F616C4B93970 /* libPods-JDNetWorkManagerDemoTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,12 +57,12 @@
 		12A7B44122FBC62900CDB287 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		15FA82C4259583D628BC51B0 /* Pods-JDNetWorkManagerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JDNetWorkManagerDemo.debug.xcconfig"; path = "Target Support Files/Pods-JDNetWorkManagerDemo/Pods-JDNetWorkManagerDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		1A6BA8A53FDC45A29ADA5F9E /* Pods-JDNetWorkManagerDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JDNetWorkManagerDemoTests.debug.xcconfig"; path = "Target Support Files/Pods-JDNetWorkManagerDemoTests/Pods-JDNetWorkManagerDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
-		5EEA3DE2EF5FEF1115469220 /* Pods_JDNetWorkManagerDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JDNetWorkManagerDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C31F5CA8704F616C4B93970 /* libPods-JDNetWorkManagerDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JDNetWorkManagerDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		217F3CBCE71FF7B3CC524695 /* libPods-JDNetWorkManagerDemoUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JDNetWorkManagerDemoUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		783444B2674C1BA52A6B2622 /* Pods-JDNetWorkManagerDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JDNetWorkManagerDemoUITests.debug.xcconfig"; path = "Target Support Files/Pods-JDNetWorkManagerDemoUITests/Pods-JDNetWorkManagerDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		A5FAAF7EDAF3B231D4745551 /* Pods_JDNetWorkManagerDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JDNetWorkManagerDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A337DC8FA855FFA65502E4D2 /* libPods-JDNetWorkManagerDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JDNetWorkManagerDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE70A4109E988C063B9B78A0 /* Pods-JDNetWorkManagerDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JDNetWorkManagerDemoUITests.release.xcconfig"; path = "Target Support Files/Pods-JDNetWorkManagerDemoUITests/Pods-JDNetWorkManagerDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		EDBA0A776CD7F10CF10207E0 /* Pods-JDNetWorkManagerDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JDNetWorkManagerDemoTests.release.xcconfig"; path = "Target Support Files/Pods-JDNetWorkManagerDemoTests/Pods-JDNetWorkManagerDemoTests.release.xcconfig"; sourceTree = "<group>"; };
-		FFCEE209CCFE0B62DE12E22D /* Pods_JDNetWorkManagerDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JDNetWorkManagerDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48F0BD588A4804B8C335B4D4 /* Pods_JDNetWorkManagerDemo.framework in Frameworks */,
+				1CF8845AA328B81C56AF4088 /* libPods-JDNetWorkManagerDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,7 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57011825B5D99C107245D5AE /* Pods_JDNetWorkManagerDemoTests.framework in Frameworks */,
+				97C5E5AE3F6D459E19FA0721 /* libPods-JDNetWorkManagerDemoTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,7 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55D631B288D124E358C72DCD /* Pods_JDNetWorkManagerDemoUITests.framework in Frameworks */,
+				468AEF35DA81214820E9B15E /* libPods-JDNetWorkManagerDemoUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,9 +165,9 @@
 		D6666285B954D949A4FB4AE0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5EEA3DE2EF5FEF1115469220 /* Pods_JDNetWorkManagerDemo.framework */,
-				FFCEE209CCFE0B62DE12E22D /* Pods_JDNetWorkManagerDemoTests.framework */,
-				A5FAAF7EDAF3B231D4745551 /* Pods_JDNetWorkManagerDemoUITests.framework */,
+				A337DC8FA855FFA65502E4D2 /* libPods-JDNetWorkManagerDemo.a */,
+				1C31F5CA8704F616C4B93970 /* libPods-JDNetWorkManagerDemoTests.a */,
+				217F3CBCE71FF7B3CC524695 /* libPods-JDNetWorkManagerDemoUITests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -183,7 +183,6 @@
 				12A7B41422FBC62700CDB287 /* Sources */,
 				12A7B41522FBC62700CDB287 /* Frameworks */,
 				12A7B41622FBC62700CDB287 /* Resources */,
-				EA8C021CD7D28218EC8B152F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -344,23 +343,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EA8C021CD7D28218EC8B152F /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-JDNetWorkManagerDemo/Pods-JDNetWorkManagerDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-JDNetWorkManagerDemo/Pods-JDNetWorkManagerDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JDNetWorkManagerDemo/Pods-JDNetWorkManagerDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F9D77DE8E31388DB8B295AF3 /* [CP] Check Pods Manifest.lock */ = {
