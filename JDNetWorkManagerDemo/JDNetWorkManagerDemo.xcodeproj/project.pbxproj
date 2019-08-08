@@ -1,0 +1,720 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		12A7B41D22FBC62700CDB287 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A7B41C22FBC62700CDB287 /* AppDelegate.m */; };
+		12A7B42022FBC62700CDB287 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A7B41F22FBC62700CDB287 /* ViewController.m */; };
+		12A7B42322FBC62700CDB287 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12A7B42122FBC62700CDB287 /* Main.storyboard */; };
+		12A7B42522FBC62800CDB287 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12A7B42422FBC62800CDB287 /* Assets.xcassets */; };
+		12A7B42822FBC62800CDB287 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12A7B42622FBC62800CDB287 /* LaunchScreen.storyboard */; };
+		12A7B42B22FBC62800CDB287 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A7B42A22FBC62800CDB287 /* main.m */; };
+		12A7B43522FBC62900CDB287 /* JDNetWorkManagerDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A7B43422FBC62900CDB287 /* JDNetWorkManagerDemoTests.m */; };
+		12A7B44022FBC62900CDB287 /* JDNetWorkManagerDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A7B43F22FBC62900CDB287 /* JDNetWorkManagerDemoUITests.m */; };
+		48F0BD588A4804B8C335B4D4 /* Pods_JDNetWorkManagerDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EEA3DE2EF5FEF1115469220 /* Pods_JDNetWorkManagerDemo.framework */; };
+		55D631B288D124E358C72DCD /* Pods_JDNetWorkManagerDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5FAAF7EDAF3B231D4745551 /* Pods_JDNetWorkManagerDemoUITests.framework */; };
+		57011825B5D99C107245D5AE /* Pods_JDNetWorkManagerDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFCEE209CCFE0B62DE12E22D /* Pods_JDNetWorkManagerDemoTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		12A7B43122FBC62800CDB287 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 12A7B41022FBC62700CDB287 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 12A7B41722FBC62700CDB287;
+			remoteInfo = JDNetWorkManagerDemo;
+		};
+		12A7B43C22FBC62900CDB287 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 12A7B41022FBC62700CDB287 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 12A7B41722FBC62700CDB287;
+			remoteInfo = JDNetWorkManagerDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		05C60A101E8FB1FF63B73543 /* Pods-JDNetWorkManagerDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JDNetWorkManagerDemo.release.xcconfig"; path = "Target Support Files/Pods-JDNetWorkManagerDemo/Pods-JDNetWorkManagerDemo.release.xcconfig"; sourceTree = "<group>"; };
+		12A7B41822FBC62700CDB287 /* JDNetWorkManagerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JDNetWorkManagerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		12A7B41B22FBC62700CDB287 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		12A7B41C22FBC62700CDB287 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		12A7B41E22FBC62700CDB287 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		12A7B41F22FBC62700CDB287 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		12A7B42222FBC62700CDB287 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		12A7B42422FBC62800CDB287 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		12A7B42722FBC62800CDB287 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		12A7B42922FBC62800CDB287 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		12A7B42A22FBC62800CDB287 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		12A7B43022FBC62800CDB287 /* JDNetWorkManagerDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JDNetWorkManagerDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		12A7B43422FBC62900CDB287 /* JDNetWorkManagerDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JDNetWorkManagerDemoTests.m; sourceTree = "<group>"; };
+		12A7B43622FBC62900CDB287 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		12A7B43B22FBC62900CDB287 /* JDNetWorkManagerDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JDNetWorkManagerDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		12A7B43F22FBC62900CDB287 /* JDNetWorkManagerDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JDNetWorkManagerDemoUITests.m; sourceTree = "<group>"; };
+		12A7B44122FBC62900CDB287 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		15FA82C4259583D628BC51B0 /* Pods-JDNetWorkManagerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JDNetWorkManagerDemo.debug.xcconfig"; path = "Target Support Files/Pods-JDNetWorkManagerDemo/Pods-JDNetWorkManagerDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		1A6BA8A53FDC45A29ADA5F9E /* Pods-JDNetWorkManagerDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JDNetWorkManagerDemoTests.debug.xcconfig"; path = "Target Support Files/Pods-JDNetWorkManagerDemoTests/Pods-JDNetWorkManagerDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5EEA3DE2EF5FEF1115469220 /* Pods_JDNetWorkManagerDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JDNetWorkManagerDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		783444B2674C1BA52A6B2622 /* Pods-JDNetWorkManagerDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JDNetWorkManagerDemoUITests.debug.xcconfig"; path = "Target Support Files/Pods-JDNetWorkManagerDemoUITests/Pods-JDNetWorkManagerDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A5FAAF7EDAF3B231D4745551 /* Pods_JDNetWorkManagerDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JDNetWorkManagerDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE70A4109E988C063B9B78A0 /* Pods-JDNetWorkManagerDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JDNetWorkManagerDemoUITests.release.xcconfig"; path = "Target Support Files/Pods-JDNetWorkManagerDemoUITests/Pods-JDNetWorkManagerDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		EDBA0A776CD7F10CF10207E0 /* Pods-JDNetWorkManagerDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JDNetWorkManagerDemoTests.release.xcconfig"; path = "Target Support Files/Pods-JDNetWorkManagerDemoTests/Pods-JDNetWorkManagerDemoTests.release.xcconfig"; sourceTree = "<group>"; };
+		FFCEE209CCFE0B62DE12E22D /* Pods_JDNetWorkManagerDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JDNetWorkManagerDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		12A7B41522FBC62700CDB287 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48F0BD588A4804B8C335B4D4 /* Pods_JDNetWorkManagerDemo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		12A7B42D22FBC62800CDB287 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57011825B5D99C107245D5AE /* Pods_JDNetWorkManagerDemoTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		12A7B43822FBC62900CDB287 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55D631B288D124E358C72DCD /* Pods_JDNetWorkManagerDemoUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		12A7B40F22FBC62700CDB287 = {
+			isa = PBXGroup;
+			children = (
+				12A7B41A22FBC62700CDB287 /* JDNetWorkManagerDemo */,
+				12A7B43322FBC62800CDB287 /* JDNetWorkManagerDemoTests */,
+				12A7B43E22FBC62900CDB287 /* JDNetWorkManagerDemoUITests */,
+				12A7B41922FBC62700CDB287 /* Products */,
+				89D6670E80953FAC62221F3A /* Pods */,
+				D6666285B954D949A4FB4AE0 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		12A7B41922FBC62700CDB287 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				12A7B41822FBC62700CDB287 /* JDNetWorkManagerDemo.app */,
+				12A7B43022FBC62800CDB287 /* JDNetWorkManagerDemoTests.xctest */,
+				12A7B43B22FBC62900CDB287 /* JDNetWorkManagerDemoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		12A7B41A22FBC62700CDB287 /* JDNetWorkManagerDemo */ = {
+			isa = PBXGroup;
+			children = (
+				12A7B41B22FBC62700CDB287 /* AppDelegate.h */,
+				12A7B41C22FBC62700CDB287 /* AppDelegate.m */,
+				12A7B41E22FBC62700CDB287 /* ViewController.h */,
+				12A7B41F22FBC62700CDB287 /* ViewController.m */,
+				12A7B42122FBC62700CDB287 /* Main.storyboard */,
+				12A7B42422FBC62800CDB287 /* Assets.xcassets */,
+				12A7B42622FBC62800CDB287 /* LaunchScreen.storyboard */,
+				12A7B42922FBC62800CDB287 /* Info.plist */,
+				12A7B42A22FBC62800CDB287 /* main.m */,
+			);
+			path = JDNetWorkManagerDemo;
+			sourceTree = "<group>";
+		};
+		12A7B43322FBC62800CDB287 /* JDNetWorkManagerDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				12A7B43422FBC62900CDB287 /* JDNetWorkManagerDemoTests.m */,
+				12A7B43622FBC62900CDB287 /* Info.plist */,
+			);
+			path = JDNetWorkManagerDemoTests;
+			sourceTree = "<group>";
+		};
+		12A7B43E22FBC62900CDB287 /* JDNetWorkManagerDemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				12A7B43F22FBC62900CDB287 /* JDNetWorkManagerDemoUITests.m */,
+				12A7B44122FBC62900CDB287 /* Info.plist */,
+			);
+			path = JDNetWorkManagerDemoUITests;
+			sourceTree = "<group>";
+		};
+		89D6670E80953FAC62221F3A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				15FA82C4259583D628BC51B0 /* Pods-JDNetWorkManagerDemo.debug.xcconfig */,
+				05C60A101E8FB1FF63B73543 /* Pods-JDNetWorkManagerDemo.release.xcconfig */,
+				1A6BA8A53FDC45A29ADA5F9E /* Pods-JDNetWorkManagerDemoTests.debug.xcconfig */,
+				EDBA0A776CD7F10CF10207E0 /* Pods-JDNetWorkManagerDemoTests.release.xcconfig */,
+				783444B2674C1BA52A6B2622 /* Pods-JDNetWorkManagerDemoUITests.debug.xcconfig */,
+				AE70A4109E988C063B9B78A0 /* Pods-JDNetWorkManagerDemoUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D6666285B954D949A4FB4AE0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5EEA3DE2EF5FEF1115469220 /* Pods_JDNetWorkManagerDemo.framework */,
+				FFCEE209CCFE0B62DE12E22D /* Pods_JDNetWorkManagerDemoTests.framework */,
+				A5FAAF7EDAF3B231D4745551 /* Pods_JDNetWorkManagerDemoUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		12A7B41722FBC62700CDB287 /* JDNetWorkManagerDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 12A7B44422FBC62900CDB287 /* Build configuration list for PBXNativeTarget "JDNetWorkManagerDemo" */;
+			buildPhases = (
+				9DBBD3EC77818CE96D6DA129 /* [CP] Check Pods Manifest.lock */,
+				12A7B41422FBC62700CDB287 /* Sources */,
+				12A7B41522FBC62700CDB287 /* Frameworks */,
+				12A7B41622FBC62700CDB287 /* Resources */,
+				EA8C021CD7D28218EC8B152F /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JDNetWorkManagerDemo;
+			productName = JDNetWorkManagerDemo;
+			productReference = 12A7B41822FBC62700CDB287 /* JDNetWorkManagerDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		12A7B42F22FBC62800CDB287 /* JDNetWorkManagerDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 12A7B44722FBC62900CDB287 /* Build configuration list for PBXNativeTarget "JDNetWorkManagerDemoTests" */;
+			buildPhases = (
+				F9D77DE8E31388DB8B295AF3 /* [CP] Check Pods Manifest.lock */,
+				12A7B42C22FBC62800CDB287 /* Sources */,
+				12A7B42D22FBC62800CDB287 /* Frameworks */,
+				12A7B42E22FBC62800CDB287 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				12A7B43222FBC62800CDB287 /* PBXTargetDependency */,
+			);
+			name = JDNetWorkManagerDemoTests;
+			productName = JDNetWorkManagerDemoTests;
+			productReference = 12A7B43022FBC62800CDB287 /* JDNetWorkManagerDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		12A7B43A22FBC62900CDB287 /* JDNetWorkManagerDemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 12A7B44A22FBC62900CDB287 /* Build configuration list for PBXNativeTarget "JDNetWorkManagerDemoUITests" */;
+			buildPhases = (
+				85AF2981C966186F6731B239 /* [CP] Check Pods Manifest.lock */,
+				12A7B43722FBC62900CDB287 /* Sources */,
+				12A7B43822FBC62900CDB287 /* Frameworks */,
+				12A7B43922FBC62900CDB287 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				12A7B43D22FBC62900CDB287 /* PBXTargetDependency */,
+			);
+			name = JDNetWorkManagerDemoUITests;
+			productName = JDNetWorkManagerDemoUITests;
+			productReference = 12A7B43B22FBC62900CDB287 /* JDNetWorkManagerDemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		12A7B41022FBC62700CDB287 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1030;
+				ORGANIZATIONNAME = JDragon;
+				TargetAttributes = {
+					12A7B41722FBC62700CDB287 = {
+						CreatedOnToolsVersion = 10.3;
+					};
+					12A7B42F22FBC62800CDB287 = {
+						CreatedOnToolsVersion = 10.3;
+						TestTargetID = 12A7B41722FBC62700CDB287;
+					};
+					12A7B43A22FBC62900CDB287 = {
+						CreatedOnToolsVersion = 10.3;
+						TestTargetID = 12A7B41722FBC62700CDB287;
+					};
+				};
+			};
+			buildConfigurationList = 12A7B41322FBC62700CDB287 /* Build configuration list for PBXProject "JDNetWorkManagerDemo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 12A7B40F22FBC62700CDB287;
+			productRefGroup = 12A7B41922FBC62700CDB287 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				12A7B41722FBC62700CDB287 /* JDNetWorkManagerDemo */,
+				12A7B42F22FBC62800CDB287 /* JDNetWorkManagerDemoTests */,
+				12A7B43A22FBC62900CDB287 /* JDNetWorkManagerDemoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		12A7B41622FBC62700CDB287 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12A7B42822FBC62800CDB287 /* LaunchScreen.storyboard in Resources */,
+				12A7B42522FBC62800CDB287 /* Assets.xcassets in Resources */,
+				12A7B42322FBC62700CDB287 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		12A7B42E22FBC62800CDB287 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		12A7B43922FBC62900CDB287 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		85AF2981C966186F6731B239 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JDNetWorkManagerDemoUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9DBBD3EC77818CE96D6DA129 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JDNetWorkManagerDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA8C021CD7D28218EC8B152F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JDNetWorkManagerDemo/Pods-JDNetWorkManagerDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JDNetWorkManagerDemo/Pods-JDNetWorkManagerDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JDNetWorkManagerDemo/Pods-JDNetWorkManagerDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F9D77DE8E31388DB8B295AF3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JDNetWorkManagerDemoTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		12A7B41422FBC62700CDB287 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12A7B42022FBC62700CDB287 /* ViewController.m in Sources */,
+				12A7B42B22FBC62800CDB287 /* main.m in Sources */,
+				12A7B41D22FBC62700CDB287 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		12A7B42C22FBC62800CDB287 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12A7B43522FBC62900CDB287 /* JDNetWorkManagerDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		12A7B43722FBC62900CDB287 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				12A7B44022FBC62900CDB287 /* JDNetWorkManagerDemoUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		12A7B43222FBC62800CDB287 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 12A7B41722FBC62700CDB287 /* JDNetWorkManagerDemo */;
+			targetProxy = 12A7B43122FBC62800CDB287 /* PBXContainerItemProxy */;
+		};
+		12A7B43D22FBC62900CDB287 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 12A7B41722FBC62700CDB287 /* JDNetWorkManagerDemo */;
+			targetProxy = 12A7B43C22FBC62900CDB287 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		12A7B42122FBC62700CDB287 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				12A7B42222FBC62700CDB287 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		12A7B42622FBC62800CDB287 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				12A7B42722FBC62800CDB287 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		12A7B44222FBC62900CDB287 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		12A7B44322FBC62900CDB287 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		12A7B44522FBC62900CDB287 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 15FA82C4259583D628BC51B0 /* Pods-JDNetWorkManagerDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RR4N8AJ6T9;
+				INFOPLIST_FILE = JDNetWorkManagerDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.spotlight.JDNetWorkManagerDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		12A7B44622FBC62900CDB287 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05C60A101E8FB1FF63B73543 /* Pods-JDNetWorkManagerDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RR4N8AJ6T9;
+				INFOPLIST_FILE = JDNetWorkManagerDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.spotlight.JDNetWorkManagerDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		12A7B44822FBC62900CDB287 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A6BA8A53FDC45A29ADA5F9E /* Pods-JDNetWorkManagerDemoTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RR4N8AJ6T9;
+				INFOPLIST_FILE = JDNetWorkManagerDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.spotlight.JDNetWorkManagerDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JDNetWorkManagerDemo.app/JDNetWorkManagerDemo";
+			};
+			name = Debug;
+		};
+		12A7B44922FBC62900CDB287 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EDBA0A776CD7F10CF10207E0 /* Pods-JDNetWorkManagerDemoTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RR4N8AJ6T9;
+				INFOPLIST_FILE = JDNetWorkManagerDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.spotlight.JDNetWorkManagerDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JDNetWorkManagerDemo.app/JDNetWorkManagerDemo";
+			};
+			name = Release;
+		};
+		12A7B44B22FBC62900CDB287 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 783444B2674C1BA52A6B2622 /* Pods-JDNetWorkManagerDemoUITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RR4N8AJ6T9;
+				INFOPLIST_FILE = JDNetWorkManagerDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.spotlight.JDNetWorkManagerDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = JDNetWorkManagerDemo;
+			};
+			name = Debug;
+		};
+		12A7B44C22FBC62900CDB287 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE70A4109E988C063B9B78A0 /* Pods-JDNetWorkManagerDemoUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RR4N8AJ6T9;
+				INFOPLIST_FILE = JDNetWorkManagerDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.spotlight.JDNetWorkManagerDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = JDNetWorkManagerDemo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		12A7B41322FBC62700CDB287 /* Build configuration list for PBXProject "JDNetWorkManagerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12A7B44222FBC62900CDB287 /* Debug */,
+				12A7B44322FBC62900CDB287 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		12A7B44422FBC62900CDB287 /* Build configuration list for PBXNativeTarget "JDNetWorkManagerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12A7B44522FBC62900CDB287 /* Debug */,
+				12A7B44622FBC62900CDB287 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		12A7B44722FBC62900CDB287 /* Build configuration list for PBXNativeTarget "JDNetWorkManagerDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12A7B44822FBC62900CDB287 /* Debug */,
+				12A7B44922FBC62900CDB287 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		12A7B44A22FBC62900CDB287 /* Build configuration list for PBXNativeTarget "JDNetWorkManagerDemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12A7B44B22FBC62900CDB287 /* Debug */,
+				12A7B44C22FBC62900CDB287 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 12A7B41022FBC62700CDB287 /* Project object */;
+}
