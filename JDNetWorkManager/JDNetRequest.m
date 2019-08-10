@@ -121,7 +121,7 @@ typedef NS_ENUM(NSInteger,JDNetRefreshCacheTimeType)
                            failure:(JDNetRequestCompletionBlock)failure
 {
     JDNetRequest  *req  = [[JDNetRequest  alloc]init];
-    [req setZmRequestUrl:url];
+    [req setJDRequestUrl:url];
     NSMutableDictionary  *dic = [[NSMutableDictionary  alloc]initWithDictionary:Arguments];
     req.argument = dic;
     [req isShowHUDConfig];
@@ -152,7 +152,7 @@ typedef NS_ENUM(NSInteger,JDNetRefreshCacheTimeType)
     for (int i=0; i<urls.count; i++) {
         
         JDNetRequest  *req  = [[JDNetRequest  alloc]init];
-        [req setZmRequestUrl:urls[i]];
+        [req setJDRequestUrl:urls[i]];
         NSMutableDictionary  *dic = [[NSMutableDictionary  alloc]initWithDictionary:argumentsArr[i]];
         req.argument = dic;
         [requestArr addObject:req];
@@ -185,7 +185,7 @@ typedef NS_ENUM(NSInteger,JDNetRefreshCacheTimeType)
     for (int i=0; i<urls.count; i++) {
         
         JDNetRequest  *req  = [[JDNetRequest  alloc]init];
-        [req setZmRequestUrl:urls[i]];
+        [req setJDRequestUrl:urls[i]];
         NSMutableDictionary  *dic = [[NSMutableDictionary  alloc]initWithDictionary:argumentsArr[i]];
         req.argument = dic;
         [requestArr addObject:req];
@@ -211,7 +211,7 @@ typedef NS_ENUM(NSInteger,JDNetRefreshCacheTimeType)
             }
         }
     } failure:^(JDBatchRequest * _Nonnull batchRequest) {
-        JDNetRequest *request = batchRequest.failedRequest;
+        JDNetRequest *request = (JDNetRequest*)batchRequest.failedRequest;
         NSLog(@"%@",[NSString stringWithFormat:@"\n**原请求队列: %@。\n请求失败的接口：%@ , 错误是：%@",batchRequest.requestArray,request.requestUrl,request.responseString]);
         [request statusCodeValidator];
         if (failure) {

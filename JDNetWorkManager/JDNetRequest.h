@@ -41,7 +41,7 @@ typedef void(^JDNetBatchRequestCompletionBlock)( JDBatchRequest *request);
 // 返回的提示信息
 @property (nonatomic, readonly, copy) NSString *serverResponseMessage;
 
-@property (nonatomic,  copy) NSString *zmRequestUrl;
+@property (nonatomic,  copy) NSString *JDRequestUrl;
 
 +(instancetype)startRequestWithUrl:(NSString*)url
                withExtendArguments:(NSDictionary*)Arguments
