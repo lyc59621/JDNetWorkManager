@@ -40,22 +40,46 @@ typedef NS_ENUM(NSUInteger, ServerType) {
     //    config.securityPolicy = [self defaultSecurityPolicyByAF];
     switch (serverType) {
         case kSeverTypeMock:     // 开发服务器地址
-            config.baseUrl = @"";
+            config.baseUrl = [[self class] getSeverTypeMockBaseUrl];
             break;
         case kSeverTypeDev:     // 开发服务器地址
-            config.baseUrl = @"";
+            config.baseUrl = [[self class] getSeverTypeDevBaseUrl];
             break;
         case kSeverTypeTest:     // 测试服务器地址
-            config.baseUrl = @"";
+            config.baseUrl = [[self class] getSeverTypeTestBaseUrl];
             break;
         case kSeverTypeRelease:   // 发布版服务器地址
-            config.baseUrl = @"";
+            config.baseUrl = [[self class] getSeverTypeReleaseBaseUrl];
             break;
         default:
             break;
     }
     //证书配置 是需要双向验证
     //    [self configHttpsWithIsCert:NO];
+}
++(NSString*)getSeverTypeMockBaseUrl
+{
+    
+    return @"";
+    
+}
++(NSString*)getSeverTypeDevBaseUrl
+{
+    
+    return @"";
+    
+}
++(NSString*)getSeverTypeTestBaseUrl
+{
+    
+    return @"";
+    
+}
++(NSString*)getSeverTypeReleaseBaseUrl
+{
+    
+    return @"";
+    
 }
 + (void)configHttpsWithIsCert:(BOOL)isCert {
     

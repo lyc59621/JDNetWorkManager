@@ -52,16 +52,16 @@ typedef NS_ENUM(NSInteger,JDNetRefreshCacheTimeType)
 {
     NSInteger seconds=-1;
     switch (_cacheTimeType) {
-        case JDNetRequestCacheTimeTypeFirstLong:
+            case JDNetRequestCacheTimeTypeFirstLong:
             seconds= 60*60*24*30;
             break;
-        case JDNetRequestCacheTimeTypeLong:
+            case JDNetRequestCacheTimeTypeLong:
             seconds=10*6;
             break;
-        case JDNetRequestCacheTimeTypeShort:
+            case JDNetRequestCacheTimeTypeShort:
             seconds= 5;
             break;
-        case JDNetRequestCacheTimeTypeNone:
+            case JDNetRequestCacheTimeTypeNone:
         default:
             break;
     }
@@ -101,7 +101,7 @@ typedef NS_ENUM(NSInteger,JDNetRefreshCacheTimeType)
         }
 #if DEBUG
         if (!request.responseObject)
-            NSLog(@"解析失败");
+        NSLog(@"解析失败");
 #endif
     }];
     [self start];
@@ -221,6 +221,10 @@ typedef NS_ENUM(NSInteger,JDNetRefreshCacheTimeType)
     return batch;
 }
 - (NSDictionary *)requestHeaderFieldValueDictionary {
+    return [[self class] publicHead];;
+}
++(NSDictionary*)publicHead
+{
     return @{};
 }
 - (BOOL)statusCodeValidator {
@@ -234,7 +238,7 @@ typedef NS_ENUM(NSInteger,JDNetRefreshCacheTimeType)
 }
 -(void)showHTTPServerResponseMessageError
 {
-   
+    
     NSDictionary *reObj = self.responseObject;
     NSString  *error =[NSString stringWithFormat:@"错误code:%ld",self.responseStatusCode];
     if ([reObj.allKeys containsObject:@"error"]) {
@@ -254,7 +258,7 @@ typedef NS_ENUM(NSInteger,JDNetRefreshCacheTimeType)
 }
 -(void)loginStateChangeAction
 {
-   
+    
 }
 + (void)errorAlertInfo:(NSString *)title {
     
@@ -262,7 +266,7 @@ typedef NS_ENUM(NSInteger,JDNetRefreshCacheTimeType)
 }
 -(void)isShowHUDConfig
 {
-   
+    
 }
 
 //- (NSString *)description
@@ -274,3 +278,4 @@ typedef NS_ENUM(NSInteger,JDNetRefreshCacheTimeType)
 
 
 @end
+
