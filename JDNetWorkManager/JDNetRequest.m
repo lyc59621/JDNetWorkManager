@@ -110,7 +110,7 @@ typedef NS_ENUM(NSInteger,JDNetRefreshCacheTimeType)
                withExtendArguments:(NSDictionary*)Arguments
     withCompletionBlockWithSuccess:(JDNetRequestCompletionBlock)success
 {
-    return  [JDNetRequest startRequestWithUrl:url withExtendArguments:Arguments withCompletionBlockWithSuccess:success failure:^(__kindof JDNetRequest * _Nonnull request) {
+    return  [self startRequestWithUrl:url withExtendArguments:Arguments withCompletionBlockWithSuccess:success failure:^(__kindof JDNetRequest * _Nonnull request) {
         
     }];
 }
@@ -120,7 +120,7 @@ typedef NS_ENUM(NSInteger,JDNetRefreshCacheTimeType)
     withCompletionBlockWithSuccess:(JDNetRequestCompletionBlock)success
                            failure:(JDNetRequestCompletionBlock)failure
 {
-    JDNetRequest  *req  = [[JDNetRequest  alloc]init];
+    JDNetRequest  *req  =(JDNetRequest*) [[[self class]  alloc]init];
     [req setJDRequestUrl:url];
     NSMutableDictionary  *dic = [[NSMutableDictionary  alloc]initWithDictionary:Arguments];
     req.argument = dic;
@@ -129,7 +129,7 @@ typedef NS_ENUM(NSInteger,JDNetRefreshCacheTimeType)
         NSLog(@"请求成功%@",request.filtResponseObj);
         if([request.filtResponseObj isKindOfClass:[NSNull class]])return;
         success(request);
-    } failure:^(__kindof JDBaseRequest * _Nonnull request) {
+    } failure:^(__kindof JDNetRequest * _Nonnull request) {
         NSString  *error = request.error.localizedDescription;
         if (req.serverResponseMessage.length>0) {
             error = req.serverResponseMessage;
@@ -151,7 +151,7 @@ typedef NS_ENUM(NSInteger,JDNetRefreshCacheTimeType)
     NSMutableArray  *requestArr = [[NSMutableArray alloc]init];
     for (int i=0; i<urls.count; i++) {
         
-        JDNetRequest  *req  = [[JDNetRequest  alloc]init];
+        JDNetRequest  *req  = [[[self class]  alloc]init];
         [req setJDRequestUrl:urls[i]];
         NSMutableDictionary  *dic = [[NSMutableDictionary  alloc]initWithDictionary:argumentsArr[i]];
         req.argument = dic;
@@ -184,7 +184,7 @@ typedef NS_ENUM(NSInteger,JDNetRefreshCacheTimeType)
     NSMutableArray  *requestArr = [[NSMutableArray alloc]init];
     for (int i=0; i<urls.count; i++) {
         
-        JDNetRequest  *req  = [[JDNetRequest  alloc]init];
+        JDNetRequest  *req  = [[[self class]  alloc]init];
         [req setJDRequestUrl:urls[i]];
         NSMutableDictionary  *dic = [[NSMutableDictionary  alloc]initWithDictionary:argumentsArr[i]];
         req.argument = dic;
