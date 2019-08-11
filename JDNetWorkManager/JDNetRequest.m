@@ -52,16 +52,16 @@ typedef NS_ENUM(NSInteger,JDNetRefreshCacheTimeType)
 {
     NSInteger seconds=-1;
     switch (_cacheTimeType) {
-            case JDNetRequestCacheTimeTypeFirstLong:
+        case JDNetRequestCacheTimeTypeFirstLong:
             seconds= 60*60*24*30;
             break;
-            case JDNetRequestCacheTimeTypeLong:
+        case JDNetRequestCacheTimeTypeLong:
             seconds=10*6;
             break;
-            case JDNetRequestCacheTimeTypeShort:
+        case JDNetRequestCacheTimeTypeShort:
             seconds= 5;
             break;
-            case JDNetRequestCacheTimeTypeNone:
+        case JDNetRequestCacheTimeTypeNone:
         default:
             break;
     }
@@ -101,7 +101,7 @@ typedef NS_ENUM(NSInteger,JDNetRefreshCacheTimeType)
         }
 #if DEBUG
         if (!request.responseObject)
-        NSLog(@"解析失败");
+            NSLog(@"解析失败");
 #endif
     }];
     [self start];
@@ -151,7 +151,7 @@ typedef NS_ENUM(NSInteger,JDNetRefreshCacheTimeType)
     NSMutableArray  *requestArr = [[NSMutableArray alloc]init];
     for (int i=0; i<urls.count; i++) {
         
-        JDNetRequest  *req  = [[[self class]  alloc]init];
+        JDNetRequest  *req  = (JDNetRequest*) [[[self class]  alloc]init];
         [req setJDRequestUrl:urls[i]];
         NSMutableDictionary  *dic = [[NSMutableDictionary  alloc]initWithDictionary:argumentsArr[i]];
         req.argument = dic;
@@ -184,7 +184,7 @@ typedef NS_ENUM(NSInteger,JDNetRefreshCacheTimeType)
     NSMutableArray  *requestArr = [[NSMutableArray alloc]init];
     for (int i=0; i<urls.count; i++) {
         
-        JDNetRequest  *req  = [[[self class]  alloc]init];
+        JDNetRequest  *req  = (JDNetRequest*) [[[self class]  alloc]init];
         [req setJDRequestUrl:urls[i]];
         NSMutableDictionary  *dic = [[NSMutableDictionary  alloc]initWithDictionary:argumentsArr[i]];
         req.argument = dic;
