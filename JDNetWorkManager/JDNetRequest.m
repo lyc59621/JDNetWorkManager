@@ -81,7 +81,7 @@ typedef NS_ENUM(NSInteger,JDNetRefreshCacheTimeType)
 }
 -(NSString*)requestUrl
 {
-    return @"";
+    return self.JDRequestUrl;
 }
 // 如果没有网络 failure同步方式返回
 - (void)startWithCompletionBlockWithSuccess:(JDRequestCompletionBlock)success
@@ -278,4 +278,5 @@ typedef NS_ENUM(NSInteger,JDNetRefreshCacheTimeType)
 
 
 @end
+
 
