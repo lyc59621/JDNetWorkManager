@@ -11,23 +11,23 @@
 #import <JDragonNetWork/JDNetwork.h>
 
 
-typedef NS_ENUM(NSUInteger, ServerType) {
-    kSeverTypeMock,     // 模拟开发服务器地址
-    kSeverTypeDev,     // 开发服务器地址
-    kSeverTypeTest,     //测试服务器地址
-    kSeverTypeRelease   //发布版服务器地址
-};
+
 @implementation JDNetApiManager
 
 
 + (void)configNetwork {
-    //    JDNetworkAgent *agent = [JDNetworkAgent sharedAgent];
-    //    [agent setValue:[NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html",@"text/plain",@"application/x-www-form-urlencodem", nil] forKeyPath:@"_manager.responseSerializer.acceptableContentTypes"];
-#ifdef DEBUG
-    static ServerType serverType = 2;
-#else
-    static ServerType serverType = 3;
-#endif
+    JDNetworkAgent *agent = [JDNetworkAgent sharedAgent];
+    
+    
+    [agent setValue:[NSSet setWithArray:@[@"application/json",
+                                            @"text/html",
+                                            @"text/json",
+                                            @"text/plain",
+                                            @"text/javascript",
+                                            @"text/xml",
+                                            @"image/*"]]
+    forKeyPath:@"_manager.responseSerializer.acceptableContentTypes"];
+
     JDNetworkConfig *config = [JDNetworkConfig sharedConfig];
     config.debugLogEnabled = YES; // 总开关
     config.developerLogEnabled = YES;
@@ -37,7 +37,17 @@ typedef NS_ENUM(NSUInteger, ServerType) {
     config.logCacheMetaDataEnabled = NO;
     config.logCookieEnabled = NO;
     config.logRestfulEnabled = NO;
-    //    config.securityPolicy = [self defaultSecurityPolicyByAF];
+    [self configNetworkNormelBaseUrlWithServerType:0];
+   
+}
++ (void)configNetworkNormelBaseUrlWithServerType:(ServerType)serverType
+{
+    #ifdef DEBUG
+         serverType = serverType;
+    #else
+         serverType = kSeverTypeRelease;
+    #endif
+    JDNetworkConfig *config = [JDNetworkConfig sharedConfig];
     switch (serverType) {
         case kSeverTypeMock:     // 开发服务器地址
             config.baseUrl = [[self class] getSeverTypeMockBaseUrl];
@@ -54,8 +64,11 @@ typedef NS_ENUM(NSUInteger, ServerType) {
         default:
             break;
     }
-    //证书配置 是需要双向验证
-    //    [self configHttpsWithIsCert:NO];
+}
++ (void)configNetworkbaseUrl:(NSString*)baseUrl
+{
+    JDNetworkConfig *config = [JDNetworkConfig sharedConfig];
+    config.baseUrl = baseUrl;
 }
 +(NSString*)getSeverTypeMockBaseUrl
 {
@@ -81,12 +94,12 @@ typedef NS_ENUM(NSUInteger, ServerType) {
     return @"";
     
 }
-+ (void)configHttpsWithIsCert:(BOOL)isCert {
+//证书配置 是需要双向验证
++ (void)configHttpsWithIsCert:(BOOL)isCert withCertName:(NSString*)certName{
     
     // 获取证书
-    NSString *cerPath = [[NSBundle mainBundle] pathForResource:@"ssl_content" ofType:@"pem"];//证书的路径
+    NSString *cerPath = [[NSBundle mainBundle] pathForResource:certName ofType:@"pem"];//证书的路径
     NSData *certData = [NSData dataWithContentsOfFile:cerPath];
-    
     // 配置安全模式
     JDNetworkConfig *config = [JDNetworkConfig sharedConfig];
     //    config.cdnUrl = @"";
@@ -101,7 +114,7 @@ typedef NS_ENUM(NSUInteger, ServerType) {
     securityPolicy.validatesDomainName = isCert;
     
     // 添加服务器证书,单向验证;  可采用双证书 双向验证;
-    //    securityPolicy.pinnedCertificates = [NSSet setWithObject:certData];
+//    securityPolicy.pinnedCertificates = [NSSet setWithObject:certData];
     
     [config setSecurityPolicy:securityPolicy];
 }

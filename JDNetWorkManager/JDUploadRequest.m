@@ -86,7 +86,7 @@
     [req isShowHUDConfig];
     req.uploadProgressBlock = progress;
     [req setCompletionBlockWithSuccess:^(__kindof JDUploadRequest * _Nonnull request) {
-        NSLog(@"请求成功%@",request.filtResponseObj);
+        NSLog(@"请求成功%@",request);
         success(request);
     } failure:^(__kindof JDBaseRequest * _Nonnull request) {
         NSLog(@"%@",[NSString stringWithFormat:@"*失败原因: %@",request.error]);

@@ -11,78 +11,82 @@
 
 @implementation JDNetResponse
 
-+ (JDNetResponse *)responseWithRequest:(JDNetRequest *)request {
++ (instancetype)responseWithRequest:(JDNetRequest *)request {
     if (!request) return nil;
-    JDNetResponse *response = [JDNetResponse new];
-    [response updateStatusCodesWithRequest:request];
-    
+    JDNetResponse *response = (JDNetResponse*)[[[self  class] alloc]init];
+    [response updateServerStatusCodesWithRequest:request];
+    [response updateRequestResponseStatusCodeWithRequest:request];
+    response.responseObject = [self responseObjectValidator:request.responseObject];
     return response;
 }
-
-- (void)updateStatusCodesWithRequest:(JDNetRequest *)request {
++ (id)responseObjectValidator:(id)responseObject {
+   
+    return responseObject;
+}
++ (instancetype)responseWithCacheRequest:(JDNetRequest *)request
+{
+    if (!request) return nil;
+    JDNetResponse *response = (JDNetResponse*)[[[self  class] alloc]init];
+    if ([request loadCacheWithError:nil]) {
+         NSLog(@"使用缓存数据");
+        response.responseObject = [request responseJSONObject];
+    }
+    response.success = true;
+    response.serverResponseStatusCode = 200;
+    response.responseStatusType = JDNetResponseStatusTypeSuccess;
+    return response;
+}
+- (void)updateServerStatusCodesWithRequest:(JDNetRequest *)request {
     NSInteger statusCode = [request responseStatusCode];
-    self.requestResponseStatusCode = statusCode;
-    self.responseMessage = @"服务器错误";
-    
+    self.serverResponseStatusCode = statusCode;
     if (statusCode > 200 && statusCode < 300) {
         self.responseStatusType = JDNetResponseStatusTypeRequestError;
     }
     else {
-        self.serverResponseStatusCode = request.serverResponseStatusCode;
-        if (request.serverResponseStatusCode != 0) { // 后台服务错误
-            if (request.serverResponseMessage.length) {
-                self.responseMessage = request.serverResponseMessage;
-            }
-            self.responseStatusType = JDNetResponseStatusTypeRequestError;
-            return;
-        }
-        
-        if (request.serverResponseStatusCode == 1) { // 没有网络
-            self.responseMessage = @"没有网络";
+        if (self.serverResponseStatusCode == 1) { // 没有网络
             self.responseStatusType = JDNetResponseStatusTypeNoNetwork;
             return;
         }
         
-        self.responseMessage = request.serverResponseMessage;
-        if (request.serverResponseStatusCode == 200) {
-            self.responseMessage = request.serverResponseMessage;
+        if (self.serverResponseStatusCode == 200) {
             self.responseStatusType = JDNetResponseStatusTypeSuccess;
+            self.success = true;
             return;
         }
-        if (request.serverResponseStatusCode == 400) {
+        if (self.serverResponseStatusCode == 400) {
             self.responseStatusType = JDNetResponseStatusTypeRequestError;
             return;
         }
-        if (request.serverResponseStatusCode > 400 && request.serverResponseStatusCode < 500) {
-            //            self.responseMessage = @"token 失效";
+        if (self.serverResponseStatusCode > 400 && self.serverResponseStatusCode < 500) {
             self.responseStatusType = JDNetResponseStatusTypeExpiryToken;
-            
             return;
         }
         
-        if (request.serverResponseStatusCode == 500) {
+        if (self.serverResponseStatusCode == 500) {
             self.responseStatusType = JDNetResponseStatusTypeServerServiceError;
             return;
         }
         
-        if (request.serverResponseStatusCode == 501) {
+        if (self.serverResponseStatusCode == 501) {
             self.responseStatusType = JDNetResponseStatusTypeServerServiceError;
             return;
         }
         
-        if (request.serverResponseStatusCode == 502) {
-            //            self.responseStatusType = kResponseStatusTypeDataNull;
+        if (self.serverResponseStatusCode == 502) {
             self.responseStatusType = JDNetResponseStatusTypeServerServiceError;
             return;
         }
         
-        if (request.serverResponseStatusCode == 600) {
+        if (self.serverResponseStatusCode == 600) {
             self.responseStatusType = JDNetResponseStatusTypeNotLogin;
             return;
         }
     }
 }
+- (void)updateRequestResponseStatusCodeWithRequest:(JDNetRequest *)request {
 
+    self.requestResponseStatusCode = 0;
+}
 - (BOOL)alertOrNot {
     if (!(self.responseStatusType == JDNetResponseStatusTypeNoNetwork ||
           self.responseStatusType == JDNetResponseStatusTypeExpiryToken ||

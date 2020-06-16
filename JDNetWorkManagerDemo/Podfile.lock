@@ -14,7 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
-  - JDNetWorkManager (0.0.1):
+  - JDNetWorkManager (0.0.3):
     - JDragonNetWork (~> 0.0.5)
   - JDragonNetWork (0.0.5):
     - AFNetworking (~> 3.2.1)
@@ -23,7 +23,7 @@ DEPENDENCIES:
   - JDNetWorkManager (from `../JDNetWorkManager.podspec`)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - AFNetworking
     - JDragonNetWork
 
@@ -33,9 +33,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
-  JDNetWorkManager: a119d5b774746d15e3c6ad07853772abd27ced45
+  JDNetWorkManager: b968e117447461fac318ce5751a0c1424d7221d3
   JDragonNetWork: 7f85f934b2611dff31922ab51507fc643fe84223
 
 PODFILE CHECKSUM: 630776f9af07c551a36d7ee819ec418c05da1c63
 
-COCOAPODS: 1.7.3
+COCOAPODS: 1.9.1

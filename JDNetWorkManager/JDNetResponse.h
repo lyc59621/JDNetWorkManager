@@ -23,7 +23,7 @@ typedef NS_ENUM(NSInteger, JDNetResponseStatusType) {
 
 @class JDNetRequest;
 
-@interface JDNetResponse : NSObject
+@interface JDNetResponse : NSHTTPURLResponse
 
 @property (nonatomic, assign) BOOL success;
 //返回接口状态码，其中：200 成功，
@@ -36,16 +36,19 @@ typedef NS_ENUM(NSInteger, JDNetResponseStatusType) {
 //                  1 没有网络
 //                  0 服务后台问题，可使用response的statuscode查询具体问题
 @property (nonatomic, assign) JDNetResponseStatusType responseStatusType;
-@property (nonatomic, assign) NSInteger serverResponseStatusCode; // 服务端返回的status code
-@property (nonatomic, assign) NSInteger requestResponseStatusCode; // 请求返回的status code
+//服务端返回的状态码
+@property (nonatomic, assign) NSInteger serverResponseStatusCode;
+//返回请求状态码，其中：0正常，其他不正常
+@property (nonatomic, assign) NSInteger requestResponseStatusCode;
 
 @property (nonatomic, strong) id responseObject;
 
-@property (nonatomic, copy) NSString *responseMessage;
++ (instancetype)responseWithRequest:(JDNetRequest *)request;
++ (instancetype)responseWithCacheRequest:(JDNetRequest *)request;
 
-+ (JDNetResponse *)responseWithRequest:(JDNetRequest *)request;
+- (void)updateServerStatusCodesWithRequest:(JDNetRequest *)request;
 
-- (void)updateStatusCodesWithRequest:(JDNetRequest *)request;
+- (void)updateRequestResponseStatusCodeWithRequest:(JDNetRequest *)request;
 
 // 是否需要提示
 - (BOOL)alertOrNot;

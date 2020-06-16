@@ -29,15 +29,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /**
- 不带参数上传头像
+ 不带参数上传图片
 
- @param url <#url description#>
- @param name <#name description#>
- @param images <#images description#>
- @param progress <#progress description#>
- @param success <#success description#>
- @param failure <#failure description#>
- @return <#return value description#>
+ @param url baseUrl
+ @param name image name
+ @param images @[UIImage]
+ @param progress 上传进度
+ @param success 成功回调
+ @param failure 失败回调
+ @return JDNetRequest
  */
 +(instancetype)startRequestWithUrl:(NSString*)url
                           withName:(NSString*)name
@@ -49,14 +49,14 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  带参数上传头像
 
- @param url <#url description#>
- @param name <#name description#>
- @param images <#images description#>
+ @param url baseUrl
+ @param name image name
+ @param images  @[UIImage]
  @param arguments NSDictionary description
- @param progress <#progress description#>
- @param success <#success description#>
- @param failure <#failure description#>
- @return <#return value description#>
+ @param progress 上传进度
+ @param success 成功回调
+ @param failure 失败回调
+ @return JDNetRequest
  */
 +(instancetype)startRequestWithUrl:(NSString*)url
                           withName:(NSString*)name

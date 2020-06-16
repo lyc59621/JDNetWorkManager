@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "JDTestRequest.h"
 
 @interface ViewController ()
 
@@ -17,6 +18,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    
+    
+    [JDNetApiManager configNetwork];
+    JDTestRequest  *req = [JDTestRequest startRequestWithUrl:@"/app/mock/256054/checkoutOnline/transDetail" withExtendArguments:@{} withCompletionBlockWithSuccess:^(JDTestRequest * _Nonnull request) {
+       
+       NSLog(@"返回数据==%@",request.JDResponse.responseObject);
+    }];
+    
 }
 
 

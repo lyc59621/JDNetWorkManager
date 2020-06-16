@@ -14,11 +14,19 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef NS_ENUM(NSUInteger, ServerType) {
+    kSeverTypeMock,     // 模拟开发服务器地址
+    kSeverTypeDev,     // 开发服务器地址
+    kSeverTypeTest,     //测试服务器地址
+    kSeverTypeRelease   //发布版服务器地址
+};
+
 @interface JDNetApiManager : NSObject
 
-
 + (void)configNetwork;
-
++ (void)configNetworkbaseUrl:(NSString*)baseUrl;
++ (void)configNetworkNormelBaseUrlWithServerType:(ServerType)serverType;
++ (void)configHttpsWithIsCert:(BOOL)isCert withCertName:(NSString*)certName;
 
 + (NSMutableDictionary *)getParametersWithService:(NSString *)service;
 

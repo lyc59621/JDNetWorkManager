@@ -12,10 +12,10 @@ NSString *const JDNetUrl_Version = @"";
 
 typedef NS_ENUM(NSInteger,JDNetRefreshCacheTimeType)
 {
-    JDNetRequestCacheTimeTypeNone=1,
-    JDNetRequestCacheTimeTypeShort=2,
-    JDNetRequestCacheTimeTypeLong=3,
-    JDNetRequestCacheTimeTypeFirstLong=4
+    JDNetRequestCacheTimeTypeNone=0,
+    JDNetRequestCacheTimeTypeShort=1,
+    JDNetRequestCacheTimeTypeLong=2,
+    JDNetRequestCacheTimeTypeFirstLong=3
     
 };
 
@@ -23,9 +23,6 @@ typedef NS_ENUM(NSInteger,JDNetRefreshCacheTimeType)
 
 
 @property (nonatomic, assign)JDNetRefreshCacheTimeType cacheTimeType;
-@property (nonatomic, readwrite, assign) NSInteger serverResponseStatusCode;
-@property (nonatomic, readwrite, assign) NSInteger serverRequestStatusCode;
-@property (nonatomic, readwrite, copy) NSString *serverResponseMessage;
 
 @property (nonatomic, strong) NSDictionary *argument;
 @property (nonatomic, assign) NSInteger firstCacheTime;
@@ -40,10 +37,13 @@ typedef NS_ENUM(NSInteger,JDNetRefreshCacheTimeType)
 {
     self=[super init];
     if (self) {
-        self.cacheTimeType=JDNetRequestCacheTimeTypeFirstLong;
-        self.ignoreCache = true;
+        
     }
     return self;
+}
+-(JDNetRefreshCacheTimeType)cacheTimeType
+{
+    return JDNetRequestCacheTimeTypeNone;
 }
 - (NSTimeInterval)requestTimeoutInterval {
     return 10.0;
@@ -51,9 +51,9 @@ typedef NS_ENUM(NSInteger,JDNetRefreshCacheTimeType)
 -(NSInteger)cacheTimeInSeconds
 {
     NSInteger seconds=-1;
-    switch (_cacheTimeType) {
+    switch (self.cacheTimeType) {
         case JDNetRequestCacheTimeTypeFirstLong:
-            seconds= 60*60*24*30;
+            seconds= 60*60*24;
             break;
         case JDNetRequestCacheTimeTypeLong:
             seconds=10*6;
@@ -68,11 +68,11 @@ typedef NS_ENUM(NSInteger,JDNetRefreshCacheTimeType)
     return seconds;
 }
 - (JDRequestMethod)requestMethod {
-    //#ifdef DEBUG
-    //    return ECRequestMethodGET;
-    //#else
-    //    return ECRequestMethodPOST;
-    //#endif
+//    #ifdef DEBUG
+//        return JDRequestMethodGET;
+//    #else
+//        return JDRequestMethodPOST;
+//    #endif
     return JDRequestMethodPOST;
 }
 - (id)requestArgument
@@ -126,19 +126,17 @@ typedef NS_ENUM(NSInteger,JDNetRefreshCacheTimeType)
     req.argument = dic;
     [req isShowHUDConfig];
     [req setCompletionBlockWithSuccess:^(__kindof JDNetRequest * _Nonnull request) {
-        NSLog(@"请求成功%@",request.filtResponseObj);
-        if([request.filtResponseObj isKindOfClass:[NSNull class]])return;
+        if (request.isDataFromCache==true) {
+            request.JDResponse = [JDNetResponse responseWithCacheRequest:request];
+        }
+        NSLog(@"请求成功%@",request);
         success(request);
     } failure:^(__kindof JDNetRequest * _Nonnull request) {
         NSString  *error = request.error.localizedDescription;
-        if (req.serverResponseMessage.length>0) {
-            error = req.serverResponseMessage;
-        }
         NSLog(@"返回数据==%@ error==%@",request.responseObject,error);
         if (failure) {
             failure(request);
         }
-        [request statusCodeValidator];
     }];
     [req start];
     return req;
@@ -156,12 +154,9 @@ typedef NS_ENUM(NSInteger,JDNetRefreshCacheTimeType)
         NSMutableDictionary  *dic = [[NSMutableDictionary  alloc]initWithDictionary:argumentsArr[i]];
         req.argument = dic;
         [requestArr addObject:req];
-        //        if ([req loadCacheWithError:nil]) {
-        //             NSDictionary *json = [req responseJSONObject];
-        //             DDLogVerbose(@"使用缓存数据");
-        //             req.filtResponseObj = json[@"data"];
-        //                    // show cached data
-        //        }
+        if (req.isDataFromCache==true) {
+            req.JDResponse = [JDNetResponse responseWithCacheRequest:req];
+        }
     }
     __block NSInteger  i = 0;
     [chainRequest addRequest:requestArr[i] callback:^(JDChainRequest * _Nonnull chainRequest, JDBaseRequest * _Nonnull baseRequest) {
@@ -189,12 +184,11 @@ typedef NS_ENUM(NSInteger,JDNetRefreshCacheTimeType)
         NSMutableDictionary  *dic = [[NSMutableDictionary  alloc]initWithDictionary:argumentsArr[i]];
         req.argument = dic;
         [requestArr addObject:req];
-        //        if ([req loadCacheWithError:nil]) {
-        //             NSDictionary *json = [req responseJSONObject];
-        //             DDLogVerbose(@"使用缓存数据");
-        //             req.filtResponseObj = json[@"data"];
-        //                // show cached data
-        //        }
+//        if ([req loadCacheWithError:nil]) {
+//             NSDictionary *jsonDic = (NSDictionary*)[req responseJSONObject];
+//             NSLog(@"使用缓存数据");
+//             req.JDResponse.responseObject = jsonDic;
+//         }
     }
     JDBatchRequest *batch = [[JDBatchRequest alloc]initWithRequestArray:requestArr];
     
@@ -204,16 +198,14 @@ typedef NS_ENUM(NSInteger,JDNetRefreshCacheTimeType)
             success(batchRequest);
         }
         for (JDNetRequest *request in batchRequest.requestArray) {
-            
-            if (request.responseObject) {
-                
-                NSLog(@"请求成功%@",request.filtResponseObj);
+            if (request.isDataFromCache==true) {
+                request.JDResponse = [JDNetResponse responseWithCacheRequest:request];
             }
+            NSLog(@"请求成功%@",request);
         }
     } failure:^(JDBatchRequest * _Nonnull batchRequest) {
         JDNetRequest *request = (JDNetRequest*)batchRequest.failedRequest;
         NSLog(@"%@",[NSString stringWithFormat:@"\n**原请求队列: %@。\n请求失败的接口：%@ , 错误是：%@",batchRequest.requestArray,request.requestUrl,request.responseString]);
-        [request statusCodeValidator];
         if (failure) {
             failure(batchRequest);
         }
@@ -228,34 +220,15 @@ typedef NS_ENUM(NSInteger,JDNetRefreshCacheTimeType)
     return @{};
 }
 - (BOOL)statusCodeValidator {
-    
-    BOOL isOk = [super statusCodeValidator];
-    if (!isOk)//HTTP 错误
-    {
-        [self showHTTPServerResponseMessageError];
+    self.JDResponse = [JDNetResponse responseWithRequest:self];
+    if (self.JDResponse.responseStatusType==200) {
+        if (self.JDResponse.requestResponseStatusCode==0) {
+            return true;
+        }
     }
-    return isOk;
+    return false;
 }
--(void)showHTTPServerResponseMessageError
-{
-    
-    NSDictionary *reObj = self.responseObject;
-    NSString  *error =[NSString stringWithFormat:@"错误code:%ld",self.responseStatusCode];
-    if ([reObj.allKeys containsObject:@"error"]) {
-        error = [NSString stringWithFormat:@"错误code:%ld  错误信息:%@",self.responseStatusCode,reObj[@"error"]];
-    }
-    [self.class errorAlertInfo:error];
-}
--(void)showServerResponseMessageError
-{
-    if([self.serverResponseMessage isKindOfClass:[NSNull class]]|| self.serverResponseMessage.length<=0)
-    {
-        [self.class errorAlertInfo:@"msg返回为空"];
-    }else
-    {
-        [self.class errorAlertInfo:self.serverResponseMessage];
-    }
-}
+
 -(void)loginStateChangeAction
 {
     

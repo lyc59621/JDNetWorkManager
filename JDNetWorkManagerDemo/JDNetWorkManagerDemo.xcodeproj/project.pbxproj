@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		12485E1F2498C68C00475217 /* JDTestRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 12485E1E2498C68C00475217 /* JDTestRequest.m */; };
+		12485E222498C8AF00475217 /* JDNetApiManager+apiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 12485E212498C8AF00475217 /* JDNetApiManager+apiManager.m */; };
 		12A7B41D22FBC62700CDB287 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A7B41C22FBC62700CDB287 /* AppDelegate.m */; };
 		12A7B42022FBC62700CDB287 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A7B41F22FBC62700CDB287 /* ViewController.m */; };
 		12A7B42322FBC62700CDB287 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12A7B42122FBC62700CDB287 /* Main.storyboard */; };
@@ -39,6 +41,10 @@
 
 /* Begin PBXFileReference section */
 		05C60A101E8FB1FF63B73543 /* Pods-JDNetWorkManagerDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JDNetWorkManagerDemo.release.xcconfig"; path = "Target Support Files/Pods-JDNetWorkManagerDemo/Pods-JDNetWorkManagerDemo.release.xcconfig"; sourceTree = "<group>"; };
+		12485E1D2498C68C00475217 /* JDTestRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JDTestRequest.h; sourceTree = "<group>"; };
+		12485E1E2498C68C00475217 /* JDTestRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JDTestRequest.m; sourceTree = "<group>"; };
+		12485E202498C8AF00475217 /* JDNetApiManager+apiManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JDNetApiManager+apiManager.h"; sourceTree = "<group>"; };
+		12485E212498C8AF00475217 /* JDNetApiManager+apiManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "JDNetApiManager+apiManager.m"; sourceTree = "<group>"; };
 		12A7B41822FBC62700CDB287 /* JDNetWorkManagerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JDNetWorkManagerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12A7B41B22FBC62700CDB287 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		12A7B41C22FBC62700CDB287 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -122,6 +128,10 @@
 				12A7B41C22FBC62700CDB287 /* AppDelegate.m */,
 				12A7B41E22FBC62700CDB287 /* ViewController.h */,
 				12A7B41F22FBC62700CDB287 /* ViewController.m */,
+				12485E202498C8AF00475217 /* JDNetApiManager+apiManager.h */,
+				12485E212498C8AF00475217 /* JDNetApiManager+apiManager.m */,
+				12485E1D2498C68C00475217 /* JDTestRequest.h */,
+				12485E1E2498C68C00475217 /* JDTestRequest.m */,
 				12A7B42122FBC62700CDB287 /* Main.storyboard */,
 				12A7B42422FBC62800CDB287 /* Assets.xcassets */,
 				12A7B42622FBC62800CDB287 /* LaunchScreen.storyboard */,
@@ -375,6 +385,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				12A7B42022FBC62700CDB287 /* ViewController.m in Sources */,
+				12485E1F2498C68C00475217 /* JDTestRequest.m in Sources */,
+				12485E222498C8AF00475217 /* JDNetApiManager+apiManager.m in Sources */,
 				12A7B42B22FBC62800CDB287 /* main.m in Sources */,
 				12A7B41D22FBC62700CDB287 /* AppDelegate.m in Sources */,
 			);
