@@ -40,7 +40,7 @@ typedef NS_ENUM(NSInteger, JDNetResponseStatusType) {
 @property (nonatomic, assign) NSInteger serverResponseStatusCode;
 //返回请求状态码，其中：0正常，其他不正常
 @property (nonatomic, assign) NSInteger requestResponseStatusCode;
-
+//返回数据Object
 @property (nonatomic, strong) id responseObject;
 
 + (instancetype)responseWithRequest:(JDNetRequest *)request;
@@ -54,16 +54,12 @@ typedef NS_ENUM(NSInteger, JDNetResponseStatusType) {
 - (BOOL)alertOrNot;
 // 是否没有有网络
 - (BOOL)isNoNetwork;
-
 // 是否token失效
 - (BOOL)isExpiryToken;
-
 // 服务器错误
 - (BOOL)isRequestServerError;
-
 // 后台服务错误
 - (BOOL)isServerServiceError;
-
 // 该目标已存在
 - (BOOL)isTargetExist;
 

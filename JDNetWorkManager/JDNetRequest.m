@@ -184,14 +184,8 @@ typedef NS_ENUM(NSInteger,JDNetRefreshCacheTimeType)
         NSMutableDictionary  *dic = [[NSMutableDictionary  alloc]initWithDictionary:argumentsArr[i]];
         req.argument = dic;
         [requestArr addObject:req];
-//        if ([req loadCacheWithError:nil]) {
-//             NSDictionary *jsonDic = (NSDictionary*)[req responseJSONObject];
-//             NSLog(@"使用缓存数据");
-//             req.JDResponse.responseObject = jsonDic;
-//         }
     }
     JDBatchRequest *batch = [[JDBatchRequest alloc]initWithRequestArray:requestArr];
-    
     [batch startWithCompletionBlockWithSuccess:^(JDBatchRequest * _Nonnull batchRequest) {
         NSLog(@"所有请求完成");
         if (success) {
@@ -228,15 +222,6 @@ typedef NS_ENUM(NSInteger,JDNetRefreshCacheTimeType)
     }
     return false;
 }
-
--(void)loginStateChangeAction
-{
-    
-}
-+ (void)errorAlertInfo:(NSString *)title {
-    
-    
-}
 -(void)isShowHUDConfig
 {
     
@@ -248,7 +233,7 @@ typedef NS_ENUM(NSInteger,JDNetRefreshCacheTimeType)
 //
 //    return [super description];
 //}
-
+//+ (RACSignal *)rac_requestSignalWithUrl:(NSString*)url withExtendArguments:(NSDictionary*)Arguments;
 
 @end
 

@@ -7,8 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-//#import "AFNetworking.h"
-
 #import <AFNetworking/AFNetworking.h>
 
 

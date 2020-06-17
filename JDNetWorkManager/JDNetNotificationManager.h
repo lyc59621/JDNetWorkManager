@@ -16,10 +16,9 @@ extern const NSString *kNotNetworkNotificationKey;
 
 // 无网络
 + (void)postNoNetworkNotification:(NSDictionary *)userInfo;
-
 // 无网络
 + (void)addNoNetworkBoserver:(id)target selector:(SEL)selector;
-
+// 移除观察者
 + (void)removeObservers:(id)target;
 
 @end
