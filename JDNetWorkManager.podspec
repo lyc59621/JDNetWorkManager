@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "JDNetWorkManager"
-  s.version      = "0.0.3"
+  s.version      = "0.0.4"
   s.summary      = "iOS JDNetWork网络库 管理 "
 
   # This description is used to generate tags and improve search results.
@@ -133,7 +133,7 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-    s.dependency  'JDragonNetWork' , '~> 0.0.5'#网络
+    s.dependency  'JDragonNetWork' , '~> 0.0.6'#网络
 
 
 end
