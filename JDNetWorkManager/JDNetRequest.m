@@ -104,7 +104,6 @@ typedef NS_ENUM(NSInteger,JDNetRefreshCacheTimeType)
             NSLog(@"解析失败");
 #endif
     }];
-    [self start];
 }
 +(instancetype)startRequestWithUrl:(NSString*)url
                withExtendArguments:(NSDictionary*)Arguments
@@ -138,7 +137,6 @@ typedef NS_ENUM(NSInteger,JDNetRefreshCacheTimeType)
             failure(request);
         }
     }];
-    [req start];
     return req;
 }
 +(JDChainRequest*)startChainRequestWithUrls:(NSArray*)urls

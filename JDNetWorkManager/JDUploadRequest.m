@@ -7,8 +7,11 @@
 //
 
 #import "JDUploadRequest.h"
-#import "JDNetwork.h"
-#import "AFNetworking.h"
+#import <JDragonNetWork/JDNetwork.h>
+#import <AFNetworking/AFNetworking.h>
+#import <Photos/Photos.h>
+#import <MobileCoreServices/UTCoreTypes.h>
+
 @implementation JDUploadResponseModel
 
 
@@ -34,31 +37,89 @@
 
         for (int i = 0; i<weakSelf.images.count; i++) {
             
-            UIImage *image = weakSelf.images[i];
-            
-            if ([image isKindOfClass:[UIImage class]]) {
-                
+            NSObject *obj = weakSelf.images[i];
+            if ([obj isKindOfClass:[UIImage class]]) {
+                UIImage  *image = (UIImage*)obj;
                 NSData *data = UIImageJPEGRepresentation(image, 1);
-                if (data) {
-                    NSString *fileName = [NSString stringWithFormat:@"JD_image_%@_%@.jpg",weakSelf.uploadName,[JDUploadRequest nowTimestamp]];
-                    NSString *type = @"image/png/jpeg";
-                    [formData appendPartWithFileData:data name:weakSelf.uploadName fileName:fileName mimeType:type];
-                }
+                [weakSelf appendImageDataActionWithFormData:formData withObj:data];
             }else
-            if ([image isMemberOfClass:[NSURL class]]) {
-                
-                NSURL  *url = (NSURL*)image;
-                NSString *fileName = [NSString stringWithFormat:@"JD_video_%@_%@.mp4",weakSelf.uploadName,[JDUploadRequest nowTimestamp]];
-                NSData *videoData = [NSData dataWithContentsOfURL:url];
-                NSString *type = @"video/quicktime";
-                if (videoData) {
-                    
-                    [formData appendPartWithFileData:videoData name:weakSelf.uploadName fileName:fileName mimeType:type];
-                }
+            if ([obj isMemberOfClass:[NSData class]]){
+                [weakSelf appendAssetActionWithFormData:formData withObj:obj];
+            }else
+            if ([obj isMemberOfClass:[NSURL class]]) {
+                [weakSelf appendUrlActionWithFormData:formData withObj:obj];
+            }else
+            if ([obj isMemberOfClass:[PHAsset class]]){
+                [weakSelf appendAssetActionWithFormData:formData withObj:obj];
             }
         }
     };
 }
+-(void)appendImageDataActionWithFormData:(id<AFMultipartFormData>)formData  withObj:(NSObject*)obj
+{
+    NSData *data = (NSData*)obj;
+    if (data) {
+        NSString *fileName = [NSString stringWithFormat:@"JD_image_%@_%@.jpeg",self.uploadName,[JDUploadRequest nowTimestamp]];
+        NSString *type = @"image/png/jpeg";
+        [formData appendPartWithFileData:data name:self.uploadName fileName:fileName mimeType:type];
+    }
+}
+
+-(void)appendGifDataActionWithFormData:(id<AFMultipartFormData>)formData  withObj:(NSObject*)obj
+{
+    NSData  *data = (NSData*)obj;
+    NSString *fileName = [NSString stringWithFormat:@"JD_%@_%@.gif",self.uploadName,[JDUploadRequest nowTimestamp]];
+    NSString *mimeType = [NSString stringWithFormat:@"image/gif"];
+    [formData appendPartWithFileData:data name:self.uploadName fileName:fileName mimeType:mimeType];
+}
+-(void)appendUrlActionWithFormData:(id<AFMultipartFormData>)formData  withObj:(NSObject*)obj
+{
+    NSURL  *url = (NSURL*)obj;
+    if (url) {
+        NSString *extension = [url pathExtension];
+        NSString *fileName = [NSString stringWithFormat:@"JD_%@_%@.%@",self.uploadName,[JDUploadRequest nowTimestamp],extension];
+        NSString *mimeType = [NSString stringWithFormat:@"video/%@", extension];
+        NSError *error;
+        [formData appendPartWithFileURL:url name:self.uploadName fileName:fileName mimeType:mimeType error:&error];
+        if (error) {
+            NSLog(@"上传文件error:%@",error);
+        }
+//        NSData *videoData = [NSData dataWithContentsOfURL:url];
+//        [formData appendPartWithFileData:videoData name:weakSelf.uploadName fileName:fileName mimeType:mimeType];
+    }
+}
+-(void)appendAssetActionWithFormData:(id<AFMultipartFormData>)formData  withObj:(NSObject*)obj
+{
+    PHAsset *asset =(PHAsset*)obj;
+    __weak __typeof(&*self)weakSelf = self;
+    if (asset.mediaType==PHAssetMediaTypeImage) {
+        
+        PHImageManager * imageManager = [PHImageManager defaultManager];
+        [imageManager requestImageDataForAsset:asset options:nil resultHandler:^(NSData * _Nullable imageData, NSString * _Nullable dataUTI, UIImageOrientation orientation, NSDictionary * _Nullable info) {
+                   
+            if ([dataUTI isEqualToString:(__bridge NSString *)kUTTypeGIF]) {
+                
+                [weakSelf appendGifDataActionWithFormData:formData withObj:imageData];
+            }else
+            {
+                [weakSelf appendImageDataActionWithFormData:formData withObj:imageData];
+            }
+        }];
+    }else
+    if (asset.mediaType==PHAssetMediaTypeVideo)
+    {
+        PHVideoRequestOptions *options = [[PHVideoRequestOptions alloc] init];
+        options.version = PHImageRequestOptionsVersionCurrent;
+        options.deliveryMode = PHVideoRequestOptionsDeliveryModeAutomatic;
+        PHImageManager * imageManager = [PHImageManager defaultManager];
+        [imageManager requestAVAssetForVideo:asset options:options resultHandler:^(AVAsset * _Nullable asset, AVAudioMix * _Nullable audioMix, NSDictionary * _Nullable info) {
+            AVURLAsset *urlAsset = (AVURLAsset *)asset;
+            NSURL *url = urlAsset.URL;
+            [weakSelf appendUrlActionWithFormData:formData withObj:url];
+        }];
+    }
+}
+
 +(instancetype)startRequestWithUrl:(NSString*)url
                           withName:(NSString*)name
                         withImages:(NSArray*)images
@@ -94,7 +155,6 @@
             failure(request);
         }
     }];
-    [req start];
     return req;
 }
 + (NSString *)nowTimestamp {

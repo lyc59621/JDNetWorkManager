@@ -33,7 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
 
  @param url baseUrl
  @param name image name
- @param images @[UIImage]
+ @param images @[UIImage NSData NSURL PHAsset]
  @param progress 上传进度
  @param success 成功回调
  @param failure 失败回调
@@ -51,7 +51,7 @@ NS_ASSUME_NONNULL_BEGIN
 
  @param url baseUrl
  @param name image name
- @param images  @[UIImage]
+ @param images  @[UIImage NSData NSURL PHAsset]
  @param arguments NSDictionary description
  @param progress 上传进度
  @param success 成功回调

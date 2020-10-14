@@ -5,6 +5,7 @@ target 'JDNetWorkManagerDemo' do
   # Comment the next line if you don't want to use dynamic frameworks
 #  use_frameworks!
   pod 'JDNetWorkManager', :path => '../JDNetWorkManager.podspec'  #指定podspec文件
+  pod 'TZImagePickerController', '3.4.2'
 
 
   # Pods for JDNetWorkManagerDemo

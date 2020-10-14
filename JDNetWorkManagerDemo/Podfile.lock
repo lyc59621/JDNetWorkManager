@@ -14,18 +14,21 @@ PODS:
   - AFNetworking/Serialization (4.0.1)
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
-  - JDNetWorkManager (0.0.4):
+  - JDNetWorkManager (0.0.5):
     - JDragonNetWork (~> 0.0.7)
   - JDragonNetWork (0.0.7):
     - AFNetworking (~> 4.0.1)
+  - TZImagePickerController (3.4.2)
 
 DEPENDENCIES:
   - JDNetWorkManager (from `../JDNetWorkManager.podspec`)
+  - TZImagePickerController (= 3.4.2)
 
 SPEC REPOS:
   trunk:
     - AFNetworking
     - JDragonNetWork
+    - TZImagePickerController
 
 EXTERNAL SOURCES:
   JDNetWorkManager:
@@ -33,9 +36,10 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
-  JDNetWorkManager: 143b9c64070c0b6f6a9beff586794171e9e6e926
+  JDNetWorkManager: 64d17adb60ca1f0c795840c42c18a315eada67a3
   JDragonNetWork: f95746a9f00e07e948249df56e3bbe0b8a3f14f0
+  TZImagePickerController: cc0b74d5f01ab4cddcc24dcdfc3c7d68e6261056
 
-PODFILE CHECKSUM: 630776f9af07c551a36d7ee819ec418c05da1c63
+PODFILE CHECKSUM: 7208efb7e439f577939f6ed4187dc53501934d10
 
 COCOAPODS: 1.9.1
